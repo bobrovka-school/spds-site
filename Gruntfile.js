@@ -253,6 +253,9 @@ module.exports = function(grunt) {
 					],
 					'test/css/tinymce.css' : [
 						'src/less/style.less'
+					],
+					'test/css/bvi.css': [
+						'src/less/bvi/scss/bvi.less'
 					]
 				}
 			},

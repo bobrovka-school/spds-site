@@ -1,12 +1,12 @@
 {
-	"name": "bobrovka_site",
-	"description": "Сайт ГБОУ СОШ с. Бобровка",
+	"name": "spds_site",
+	"description": "Сайт СП ДС «Василёк» ГБОУ СОШ с. Бобровка",
 	"main": "Grunfile.js",
 	"authors": [
 		"ProjectSoft <projectsoft2009@yandex.ru>"
 	],
 	"license": "MIT",
-	"homepage": "https://github.com/bobrovka-school/gbou-school",
+	"homepage": "https://github.com/bobrovka-school/spds-site",
 	"ignore": [
 		"**/.*",
 		"node_modules",
