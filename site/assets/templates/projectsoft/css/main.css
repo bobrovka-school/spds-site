@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face {
   font-family: "IconsSite";
-  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?0678a4e899e626eb582b9269ce37709e") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?0678a4e899e626eb582b9269ce37709e") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?0678a4e899e626eb582b9269ce37709e") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?aa6cc968836c00c34261bc5ddb3da9d2") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?aa6cc968836c00c34261bc5ddb3da9d2") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?aa6cc968836c00c34261bc5ddb3da9d2") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -289,84 +289,84 @@
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 100;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-ThinItalic.woff2?0678a4e899e626eb582b9269ce37709e") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-ThinItalic.woff?0678a4e899e626eb582b9269ce37709e") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-ThinItalic.ttf?0678a4e899e626eb582b9269ce37709e") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-ThinItalic.woff2?aa6cc968836c00c34261bc5ddb3da9d2") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-ThinItalic.woff?aa6cc968836c00c34261bc5ddb3da9d2") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-ThinItalic.ttf?aa6cc968836c00c34261bc5ddb3da9d2") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 300;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-LightItalic.woff2?0678a4e899e626eb582b9269ce37709e") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-LightItalic.woff?0678a4e899e626eb582b9269ce37709e") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-LightItalic.ttf?0678a4e899e626eb582b9269ce37709e") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-LightItalic.woff2?aa6cc968836c00c34261bc5ddb3da9d2") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-LightItalic.woff?aa6cc968836c00c34261bc5ddb3da9d2") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-LightItalic.ttf?aa6cc968836c00c34261bc5ddb3da9d2") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 400;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-Italic.woff2?0678a4e899e626eb582b9269ce37709e") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Italic.woff?0678a4e899e626eb582b9269ce37709e") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Italic.ttf?0678a4e899e626eb582b9269ce37709e") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-Italic.woff2?aa6cc968836c00c34261bc5ddb3da9d2") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Italic.woff?aa6cc968836c00c34261bc5ddb3da9d2") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Italic.ttf?aa6cc968836c00c34261bc5ddb3da9d2") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 500;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-MediumItalic.woff2?0678a4e899e626eb582b9269ce37709e") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-MediumItalic.woff?0678a4e899e626eb582b9269ce37709e") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-MediumItalic.ttf?0678a4e899e626eb582b9269ce37709e") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-MediumItalic.woff2?aa6cc968836c00c34261bc5ddb3da9d2") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-MediumItalic.woff?aa6cc968836c00c34261bc5ddb3da9d2") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-MediumItalic.ttf?aa6cc968836c00c34261bc5ddb3da9d2") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 700;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-BoldItalic.woff2?0678a4e899e626eb582b9269ce37709e") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-BoldItalic.woff?0678a4e899e626eb582b9269ce37709e") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-BoldItalic.ttf?0678a4e899e626eb582b9269ce37709e") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-BoldItalic.woff2?aa6cc968836c00c34261bc5ddb3da9d2") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-BoldItalic.woff?aa6cc968836c00c34261bc5ddb3da9d2") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-BoldItalic.ttf?aa6cc968836c00c34261bc5ddb3da9d2") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 900;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-BlackItalic.woff2?0678a4e899e626eb582b9269ce37709e") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-BlackItalic.woff?0678a4e899e626eb582b9269ce37709e") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-BlackItalic.ttf?0678a4e899e626eb582b9269ce37709e") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-BlackItalic.woff2?aa6cc968836c00c34261bc5ddb3da9d2") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-BlackItalic.woff?aa6cc968836c00c34261bc5ddb3da9d2") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-BlackItalic.ttf?aa6cc968836c00c34261bc5ddb3da9d2") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 100;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-Thin.woff2?0678a4e899e626eb582b9269ce37709e") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Thin.woff?0678a4e899e626eb582b9269ce37709e") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Thin.ttf?0678a4e899e626eb582b9269ce37709e") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-Thin.woff2?aa6cc968836c00c34261bc5ddb3da9d2") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Thin.woff?aa6cc968836c00c34261bc5ddb3da9d2") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Thin.ttf?aa6cc968836c00c34261bc5ddb3da9d2") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-Light.woff2?0678a4e899e626eb582b9269ce37709e") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Light.woff?0678a4e899e626eb582b9269ce37709e") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Light.ttf?0678a4e899e626eb582b9269ce37709e") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-Light.woff2?aa6cc968836c00c34261bc5ddb3da9d2") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Light.woff?aa6cc968836c00c34261bc5ddb3da9d2") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Light.ttf?aa6cc968836c00c34261bc5ddb3da9d2") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-Regular.woff2?0678a4e899e626eb582b9269ce37709e") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Regular.woff?0678a4e899e626eb582b9269ce37709e") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Regular.ttf?0678a4e899e626eb582b9269ce37709e") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-Regular.woff2?aa6cc968836c00c34261bc5ddb3da9d2") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Regular.woff?aa6cc968836c00c34261bc5ddb3da9d2") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Regular.ttf?aa6cc968836c00c34261bc5ddb3da9d2") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-Medium.woff2?0678a4e899e626eb582b9269ce37709e") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Medium.woff?0678a4e899e626eb582b9269ce37709e") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Medium.ttf?0678a4e899e626eb582b9269ce37709e") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-Medium.woff2?aa6cc968836c00c34261bc5ddb3da9d2") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Medium.woff?aa6cc968836c00c34261bc5ddb3da9d2") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Medium.ttf?aa6cc968836c00c34261bc5ddb3da9d2") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-Bold.woff2?0678a4e899e626eb582b9269ce37709e") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Bold.woff?0678a4e899e626eb582b9269ce37709e") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Bold.ttf?0678a4e899e626eb582b9269ce37709e") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-Bold.woff2?aa6cc968836c00c34261bc5ddb3da9d2") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Bold.woff?aa6cc968836c00c34261bc5ddb3da9d2") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Bold.ttf?aa6cc968836c00c34261bc5ddb3da9d2") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 900;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-Black.woff2?0678a4e899e626eb582b9269ce37709e") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Black.woff?0678a4e899e626eb582b9269ce37709e") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Black.ttf?0678a4e899e626eb582b9269ce37709e") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-Black.woff2?aa6cc968836c00c34261bc5ddb3da9d2") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Black.woff?aa6cc968836c00c34261bc5ddb3da9d2") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Black.ttf?aa6cc968836c00c34261bc5ddb3da9d2") format("truetype");
 }
 body,
 button,
