@@ -1,0 +1,43 @@
+name: Залить файлы на хостинг
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    # - cron: "0 1 * * 1"
+    - cron: "0 1 1,15 * *"
+  workflow_dispatch:
+    inputs:
+      Name:
+        description: Залить файлы на хостинг
+        required: true
+        default: 'Залить файлы на хостинг'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Проверка репозитория
+        uses: actions/checkout@v4.1.1
+
+      - name: Заливка на сервер
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.DIRECTORY }}
+          local-dir: ./site/
+          state-name: .status.json
+          exclude: |
+            **/viewer/**
+      - name: Удаление статус файла
+        uses: StephanThierry/ftp-delete-action@v2.1
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          workingDir: ${{ secrets.DIRECTORY }}
+          remoteFiles: ".status.json;assets/cache/docid_*.php"
+          ignoreSSL: 1
