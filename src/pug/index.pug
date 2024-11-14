@@ -22,4 +22,27 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 								|<@ENDIF>
 								|[*content*]
 								p.clearfix
+						|[[DocLister?
+						|   &parents=`2`
+						|   &display=`[(news_count_home)]`
+						|   &tvList=`imageSoc, news_date`
+						|   &tvPrefix=``
+						|   &orderBy=`news_date DESC`
+						|   &sortBy=`news_date`
+						|   &sortDir=`DESC`
+						|   &tvSortType=`TVDATETIME`
+						|   &prepare=`\ProjectSoft\PrepareDL::prepareItem`
+						|   &noneTPL=``
+						|   &ownerTPL=`@FILE:projectsoft/tpl/news_owner`
+						|   &tpl=`@FILE:projectsoft/tpl/news_tpl`
+						|   &showParent=`0`
+						|   &urlScheme=`full`
+						|   &noneWrapOuter=`0`
+						|]]
+				.secondary#secondary(role="complementary")
+					|{{@FILE assets/templates/projectsoft/tpl/widgets.html}}
+				.main-footer
+					|{{@FILE assets/templates/projectsoft/tpl/sites_link.html}}
+				|{{@FILE assets/templates/projectsoft/tpl/sendbot.html}}
+			|{{@FILE assets/templates/projectsoft/tpl/footer.html}}
 		include inc/body_close.pug

@@ -141,8 +141,8 @@ module.exports = function(grunt) {
 				src: [
 					'bower_components/jquery/dist/jquery.js',
 					"bower_components/fancybox/src/js/core.js",
-					//"bower_components/fancybox/src/js/media.js",
-					'src/js/media.js',
+					"bower_components/fancybox/src/js/media.js",
+					//'src/js/media.js',
 					"bower_components/fancybox/src/js/guestures.js",
 					"bower_components/fancybox/src/js/slideshow.js",
 					"bower_components/fancybox/src/js/fullscreen.js",
@@ -445,6 +445,14 @@ module.exports = function(grunt) {
 					'**'
 				],
 				dest: __dirname + "/site/comon/json/",
+			},
+			images: {
+				expand: true,
+				cwd: 'src/images',
+				src: [
+					'*.gif'
+				],
+				dest: '<%= globalConfig.gosave %>/images/',
 			},
 		},
 		pug: {
