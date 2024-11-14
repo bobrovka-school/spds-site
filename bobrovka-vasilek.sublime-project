@@ -19,7 +19,7 @@
 		{
 			"name": "Site Project Install",
 			"working_dir": "${project_path}",
-			"shell_cmd": "npm i --legacy-peer-deps && bower install"
+			"shell_cmd": "npm run inst"
 		}
 	]
 }
