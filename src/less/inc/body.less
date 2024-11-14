@@ -1,0 +1,78 @@
+body {
+	background-color: @bgcolor;
+}
+.body {
+	max-width: 1140px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	min-height: ~'calc(100vh - 80px)';
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	> header,
+	> fotter {
+		flex: 0 0 auto;
+	}
+	> .main {
+		flex: 1 0 auto;
+		padding-top: 30px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	@media screen and (max-width: 910px) {
+		margin-top: unset;
+		margin-bottom: unset;
+		min-height: 100vh;
+		> .main {
+			padding-left: unset;
+			padding-right: unset;
+		}
+	}
+	.eya-panel {
+		position: absolute;
+		right: 0;
+		top: 5px;
+		&,
+		a {
+			display: block;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			max-width: 100%;
+			overflow: hidden;
+		}
+		a {
+			margin-left: .6em;
+			margin-right: .6em;
+			text-decoration: none;
+			padding: 0.5em 1em;
+			background-color: #d41317;
+			color: #ffffff;
+			box-shadow: 0 0 1px rgba(255, 0, 0, 0);
+			transition: all .3s ease;
+			&:hover {
+				text-decoration: none;
+				background-color: rgba(255, 0, 0, 1);
+				color: #ffffff;
+				box-shadow: 0 0 2px rgba(255, 0, 0, 1);
+			}
+			.icon-eye-new {
+				margin-right: .6em;
+			}
+		}
+	}
+}
+.bvi-active {
+	.body {
+		margin-top: unset;
+		margin-bottom: unset;
+	}
+	.bvi-panel {
+		margin-bottom: 0;
+	}
+}
+body .bvi-body {
+	padding: 0;
+}

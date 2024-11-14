@@ -1,0 +1,31 @@
+.bvi-caption-alt {
+	display: none;
+}
+body {
+	.bvi-body[data-bvi-images="false"] {
+		.bvi-caption-alt {
+			display: inline-block;
+			border: dashed 1px;
+		}
+		.sites {
+			.sites-link {
+				a {
+					.bvi-caption-alt {
+						display: block;
+						width: 100%;
+						min-height: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+html body .bvi-panel {
+	&.bvi-fixed-top {
+		position: sticky !important;
+		z-index: 300 !important;
+	}
+}
+.bvi-block:has(.bvi-speech-off) {
+	display: none;
+}

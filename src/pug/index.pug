@@ -2,7 +2,24 @@ doctype html
 html(lang="ru" prefix="og: http://ogp.me/ns#")
 	include inc/head.pug
 	body
-		a.eya-panel
-			|Глаз
-		|[*content*]
+		.body.bvi-no-styles
+			include inc/eya.pug
+			header#masthead(role="banner")
+				|{{@FILE assets/templates/projectsoft/tpl/header.html}}
+			.main
+				.primary
+					#content(role="main")
+						article(id!="page-[*id*]" class!="page page-[*id*] type-page clearfix")
+							|<@IF:[*id:neq(1)*]>
+							header.entry-header
+								h1.entry-title
+									|[*longtitle:ifempty=`[*pagetitle*]`*]
+							|<@ENDIF>
+							.entry-content
+								|<@IF:[*id:is(1)*]>
+								include inc/gosuslugi.pug
+								//-|{{@FILE assets/templates/projectsoft/tpl/gosuslugi.html}}
+								|<@ENDIF>
+								|[*content*]
+								p.clearfix
 		include inc/body_close.pug
