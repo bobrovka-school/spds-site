@@ -85,6 +85,7 @@ site/assets/plugins/pagebuilder/config/*
 !site/assets/plugins/pagebuilder/tpl
 site/assets/plugins/pagebuilder/tpl/*
 !site/assets/plugins/pagebuilder/tpl/field_evovideo.tpl
+!site/assets/plugins/vasilek
 
 # Plugin TinyMCE4
 !site/assets/plugins/tinymce4
