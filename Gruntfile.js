@@ -254,7 +254,7 @@ module.exports = function(grunt) {
 					'test/css/tinymce.css' : [
 						'src/less/style.less'
 					],
-					'test/css/bvi.css': [
+					'<%= globalConfig.gosave %>/css/bvi.css': [
 						'src/less/bvi/scss/bvi.less'
 					]
 				}
@@ -349,7 +349,8 @@ module.exports = function(grunt) {
 			minify: {
 				files: {
 					'<%= globalConfig.gosave %>/css/main.min.css' : ['test/css/replace/main.css'],
-					'<%= globalConfig.gosave %>/css/tinymce.min.css' : ['test/css/replace/tinymce.css']
+					'<%= globalConfig.gosave %>/css/tinymce.min.css' : ['test/css/replace/tinymce.css'],
+					'<%= globalConfig.gosave %>/css/bvi.min.css' : ['<%= globalConfig.gosave %>/css/bvi.css']
 				}
 			},
 		},
@@ -421,14 +422,6 @@ module.exports = function(grunt) {
 				],
 				dest: __dirname + "/site/",
 			},
-			bvi: {
-				expand: true,
-				cwd: 'src/img',
-				src: [
-					'**'
-				],
-				dest: '<%= globalConfig.gosave %>/img/',
-			},
 			fonts: {
 				expand: true,
 				cwd: 'src/fonts',
@@ -452,14 +445,6 @@ module.exports = function(grunt) {
 					'**'
 				],
 				dest: __dirname + "/site/comon/json/",
-			},
-			hyphen: {
-				expand: true,
-				cwd: 'src/js/Hyphenopoly',
-				src: [
-					'**'
-				],
-				dest: '<%= globalConfig.gosave %>/js/Hyphenopoly/',
 			},
 		},
 		pug: {

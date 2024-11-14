@@ -5,7 +5,23 @@
 
 #php_flag register_globals Off
 AddDefaultCharset utf-8
-#php_value date.timezone Europe/Moscow
+
+# START::Основные настройки которые нас касаются
+
+# Установка зоны времени
+php_value date.timezone Europe/Samara
+
+# Запрет вывода директорий
+Options -Indexes
+
+# Установка индексного файла директорий.
+DirectoryIndex index.php
+
+# Назначаем страницы для вывода ошибки.
+ErrorDocument 403 /403/
+ErrorDocument 404 /404/
+
+# END::Основные настройки которые нас касаются
 
 #Options +FollowSymlinks
 RewriteEngine On
