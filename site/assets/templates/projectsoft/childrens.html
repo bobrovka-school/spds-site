@@ -26,8 +26,8 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<meta name="apple-mobile-web-app-title" content="СП ДС «Василёк»">
 		<link rel="manifest" href="/site.webmanifest">
-		<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/bvi.min.css?4a2b6e7dafddcbbb6446833714acb848">
-		<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/main.min.css?4a2b6e7dafddcbbb6446833714acb848">
+		<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/bvi.min.css?33100aeebc0681fb9c683119731a31f1">
+		<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/main.min.css?33100aeebc0681fb9c683119731a31f1">
 		<!-- RSS-->
 		<link rel="alternate" type="application/rss+xml" title="RSS-лента [(site_name)]" href="rss.xml"><@IF:[*id:is(2)*]>
 		<!-- Canonical-->
@@ -39,38 +39,40 @@
 			<div class="main">
 				<div class="primary">
 					<div id="content" role="main">
-						<article class="page page-[*id*] type-page clearfix" id="page-[*id*]"><@IF:[*id:neq(1)*]>
+						<article class="page page-[*id*] type-page" id="page-[*id*]">
 							<header class="entry-header">
 								<h1 class="entry-title">[*longtitle:ifempty=`[*pagetitle*]`*]</h1>
-							</header><@ENDIF>
-							<div class="entry-content"><@IF:[*id:is(1)*]><@ENDIF>
+							</header>
+							<div class="entry-content">
+								[[DocLister?
+								  &parents=`[*id*]`
+								  &display=`0`
+								  &depth=`1`
+								  &tvList=``
+								  &tvPrefix=``
+								  &orderBy=`menuindex ASC`
+								  &sortBy=`menuindex`
+								  &sortDir=`ASC`
+								  &prepare=`\ProjectSoft\PrepareDL::prepareItem`
+								  &noneTPL=``
+								  &ownerTPL=`@CODE: <ul>[+dl.wrap+]</ul>`
+								  &tpl=`@CODE: <li><a href="[+url+]" [+link_attributes+]>[+title+]</a></li>`
+								  &showParent=`0`
+								  &urlScheme=`full`
+								  &noneWrapOuter=`0`
+								]]
 								[*content*]
-								<p class="clearfix"></p>
+								[*EvoVideo:is=``:then=` `:else=`{{@FILE assets/templates/projectsoft/tpl/get_evo_video.html}}`*]
+								[[PageBuilder]]
 							</div>
-						</article>[[DocLister?
-						  &parents=`2`
-						  &display=`[(news_count_home)]`
-						  &tvList=`imageSoc, news_date`
-						  &tvPrefix=``
-						  &orderBy=`news_date DESC`
-						  &sortBy=`news_date`
-						  &sortDir=`DESC`
-						  &tvSortType=`TVDATETIME`
-						  &prepare=`\ProjectSoft\PrepareDL::prepareItem`
-						  &noneTPL=``
-						  &ownerTPL=`@FILE:projectsoft/tpl/news_owner`
-						  &tpl=`@FILE:projectsoft/tpl/news_tpl`
-						  &showParent=`0`
-						  &urlScheme=`full`
-						  &noneWrapOuter=`0`
-						]]
+						</article>
 					</div>
 				</div>
 				<div class="secondary" id="secondary" role="complementary">{{@FILE assets/templates/projectsoft/tpl/widgets.html}}</div>
 				<div class="main-footer">{{@FILE assets/templates/projectsoft/tpl/sites_link.html}}</div>{{@FILE assets/templates/projectsoft/tpl/sendbot.html}}
 			</div>{{@FILE assets/templates/projectsoft/tpl/footer.html}}
 		</div>
-		<script src="assets/templates/projectsoft/js/appjs.min.js?4a2b6e7dafddcbbb6446833714acb848"></script>
-		<script src="assets/templates/projectsoft/js/main.min.js?4a2b6e7dafddcbbb6446833714acb848"></script>
+		<script src="assets/templates/projectsoft/js/appjs.min.js?33100aeebc0681fb9c683119731a31f1"></script>
+		<script src="assets/templates/projectsoft/js/main.min.js?33100aeebc0681fb9c683119731a31f1"></script>
 	</body>
 </html>
