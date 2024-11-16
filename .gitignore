@@ -119,6 +119,9 @@ site/assets/tvs/*
 # Evo Video
 !site/assets/tvs/EvoVideo
 
+# RGB Color
+!site/assets/tvs/rgbcolor
+
 # Multi TV
 !site/assets/tvs/multitv
 site/assets/tvs/multitv/*
