@@ -2309,6 +2309,10 @@
 		}
 		return !1;
 	})
+	/**
+	 * Сабмит форм
+	 * Отправляем ajax только не на поиске
+	 */
 	.on('submit', 'form', function(e){
 		let id = $(e.target).attr("id");
 		if(id != 'search-form') {
@@ -2346,5 +2350,120 @@
 			});
 			return !1;
 		}
+	})
+	/**
+	 * Ссылки поделиться
+	 */
+	.on("click", ".share-icons a[down-link]", function(e){
+		e.preventDefault();
+		var attr = $(this).attr('down-link'),
+			link = window.location.href,
+			title = $("h1").text() || $("title").text(),
+			description = $("meta[name=description]").attr("content"),
+			image = encodeURIComponent($("meta[itemprop=image]").attr("content")),
+			str = "",
+			$a = null,
+			server = null,
+			download = null;
+		switch (attr) {
+			// Скриншот страницы
+			case "photo":
+				download = title;
+				break;
+			// Поделиться в фейсбук
+			case "facebook":
+				server = "http://www.facebook.com/sharer.php?s=100";
+				server += "&[url]=" + encodeURIComponent(link);
+				server += "&p[images][0]=" + image;
+				server += "&p[title]=" + encodeURIComponent(title);
+				server += "&p[summary]=" + encodeURIComponent(description);
+				break;
+			// Поделиться в ОК
+			case "ok":
+				server = "https://connect.ok.ru/dk?st.cmd=WidgetSharePreview";
+				server += "&st.shareUrl=" + encodeURIComponent(link);
+				break;
+			// Поделиться в ВК
+			case "vk":
+				server = "https://vk.com/share.php?";
+				server += "url=" + encodeURIComponent(link);
+				server += "&title=" + encodeURIComponent(title);
+				server += "&image=" + image;
+				server += "&description=" + encodeURIComponent(description);
+				break;
+			// Поделиться в Telegram
+			case "telegram":
+				let ttl = title + "\n\n" + description;
+				ttl = ttl.substring(0, 247) + "...";
+				server = "https://t.me/share/url?";
+				server += "url=" + encodeURIComponent(link);
+				server += "&text=" + encodeURIComponent(ttl);
+				break;
+			// Поделиться в Twitter
+			case "twitter":
+				//Длина сообщения 255 символов
+				description = description.slice(0, 255);
+				server = "https://twitter.com/intent/tweet?";
+				server += "url=" + encodeURIComponent(link);
+				server += "&text=" + encodeURIComponent(description);
+				break;
+		}
+		if(server){
+			// Если ссылка есть
+			// Открываем новое окно
+			window.open(server);
+		}else if(download) {
+			// Если ссылки нет - скриншот
+			// Запрос на скриншот страницы
+			$("body").addClass('screen');
+			var laad_screen = false,
+				jq_xhr = $.ajax({
+				url: window.location.origin + '/screenshot/',
+				type: 'POST',
+				data: 'shot=' + link + '&title=' + download,
+				responseType: 'blob',
+				processData: false,
+				xhr:function(){
+					var xhr = new XMLHttpRequest();
+					xhr.responseType= 'blob'
+					return xhr;
+				},
+			}).done(
+				function(blob, status, xhr){
+					var disposition = JSON.parse(xhr.getResponseHeader('content-disposition').split("filename=")[1]);
+					var a = $("<a>click</a>");
+					a[0].href = URL.createObjectURL(blob);
+					a[0].download = disposition.fname;
+					$("body").append(a);
+					a[0].click();
+					$("body").removeClass('screen');
+					setTimeout(function(){
+						URL.revokeObjectURL(a[0].href);
+						a.remove();
+					}, 500);
+				}
+			).fail(
+				function(){
+					$("body").removeClass('screen');
+					setTimeout(function(){
+						alert("Не удалось обработать операцию");
+					}, 500);
+				}
+			).always(
+				function(data){
+					$("body").removeClass('screen');
+					//setTimeout(function(){
+					//  alert("Не удалось обработать операцию");
+					//}, 500);
+				}
+			);
+			return !1;
+		}
+	})
+	.on("mouseover", ".share-icons-menu", function(e){
+		$(".share-icons .icons").addClass("open");
+	})
+	.on("mouseout", ".share-icons-menu", function(e){
+		$(".share-icons .icons").removeClass("open");
 	});
 }(jQuery));

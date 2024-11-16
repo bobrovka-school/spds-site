@@ -52,6 +52,7 @@ site/assets/snippets/phpthumb/*
 !site/assets/snippets/ogImage
 !site/assets/snippets/dateRus
 !site/assets/snippets/GetEvoVideo
+!site/assets/snippets/GetScreenShot
 !site/assets/snippets/FileExt
 
 # Modules
