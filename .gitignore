@@ -111,6 +111,7 @@ site/assets/templates/*
 # Custom Templates
 !site/assets/templates/.*
 !site/assets/templates/projectsoft
+!site/assets/templates/comingsoon
 
 # TV
 site/assets/tvs/*
