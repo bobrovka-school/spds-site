@@ -125,6 +125,7 @@ site/assets/tvs/multitv/configs/*
 !site/assets/tvs/multitv/configs/govlist*
 !site/assets/tvs/multitv/configs/widgets*
 !site/assets/tvs/multitv/configs/sliders*
+!site/assets/tvs/multitv/configs/share*
 
 # Files
 site/.*
