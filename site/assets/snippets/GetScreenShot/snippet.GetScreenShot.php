@@ -62,7 +62,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_REQUEST['shot'])):
 	$ctrl = downLoadInCurl($str, $saveFile);
 	if(!$ctrl):
 		$title = "ScreenShot Not Found.png";
-		file_force_download(MODX_BASE_PATH . 'assets/templates/studionions/images/404.png', $title, false);
+		file_force_download(dirname(__FILE__) . '/default.png', $title, false);
 	else:
 		file_force_download(MODX_BASE_PATH . 'assets/images/' . $time . '.png', $title, true);
 	endif;
