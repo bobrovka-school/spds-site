@@ -19,6 +19,7 @@ src/temp
 *.sublime-workspace
 *.sql
 *.zip
+/**/test*.json
 site/robots.txt
 
 site/manager
