@@ -2432,7 +2432,7 @@
 				}).done(
 					function(blob, status, xhr){
 						var disposition = JSON.parse(xhr.getResponseHeader('content-disposition').split("filename=")[1]);
-						console.log(SON.parse(xhr.getResponseHeader('content-disposition')));
+						console.log(JSON.parse(xhr.getResponseHeader('content-disposition')));
 						var a = $("<a>click</a>");
 						a[0].href = URL.createObjectURL(blob);
 						a[0].download = download + '.png';
