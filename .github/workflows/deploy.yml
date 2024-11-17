@@ -1,4 +1,4 @@
-name: Залить файлы на хостинг
+name: Залить файлы на СП ДС «Василёк» ГБОУ СОШ с. Бобровка
 on:
   push:
     branches: [ "main" ]
@@ -10,18 +10,18 @@ on:
   workflow_dispatch:
     inputs:
       Name:
-        description: Залить файлы на хостинг
+        description: Залить файлы на СП ДС «Василёк» ГБОУ СОШ с. Бобровка
         required: true
-        default: 'Залить файлы на хостинг'
+        default: 'Залить файлы на СП ДС «Василёк» ГБОУ СОШ с. Бобровка'
 jobs:
   deploy:
     runs-on: ubuntu-latest
     name: СП ДС «Василёк» ГБОУ СОШ с. Бобровка
     steps:
-      - name: Проверка репозитория
+      - name: Проверка репозитория СП ДС «Василёк» ГБОУ СОШ с. Бобровка
         uses: actions/checkout@v4.1.1
 
-      - name: Заливка на сервер
+      - name: Заливка на СП ДС «Василёк» ГБОУ СОШ с. Бобровка
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -32,7 +32,7 @@ jobs:
           state-name: .status.json
           exclude: |
             **/viewer/**
-      - name: Удаление статус файла
+      - name: Удаление статус файла c СП ДС «Василёк» ГБОУ СОШ с. Бобровка
         uses: StephanThierry/ftp-delete-action@v2.1
         with:
           host: ${{ secrets.FTP_SERVER }}
