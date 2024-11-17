@@ -2171,16 +2171,16 @@
 				arr = href.split('.'),
 				ext = arr.at(-1).toLowerCase(),
 				options = {};
-
+/*
 			console.log(ext);
 			console.log(href);
 			console.log(base);
 			console.log(reg);
-
+*/
 			if(reg.test(href)){
-
+/*
 				console.log("Test");
-
+*/
 				$(this).data('google', go);
 				$(this).data('options', options);
 				switch (ext){
@@ -2368,7 +2368,8 @@
 		switch (attr) {
 			// Скриншот страницы
 			case "photo":
-				download = title;
+				download = title.replace(/\s+/g, "-");
+				console.log(download);
 				break;
 			// Поделиться в фейсбук
 			case "facebook":
@@ -2431,6 +2432,7 @@
 			}).done(
 				function(blob, status, xhr){
 					var disposition = JSON.parse(xhr.getResponseHeader('content-disposition').split("filename=")[1]);
+					console.log(disposition);
 					var a = $("<a>click</a>");
 					a[0].href = URL.createObjectURL(blob);
 					a[0].download = disposition.fname;

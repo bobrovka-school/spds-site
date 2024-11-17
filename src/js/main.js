@@ -102,16 +102,16 @@
 				arr = href.split('.'),
 				ext = arr.at(-1).toLowerCase(),
 				options = {};
-
+/*
 			console.log(ext);
 			console.log(href);
 			console.log(base);
 			console.log(reg);
-
+*/
 			if(reg.test(href)){
-
+/*
 				console.log("Test");
-
+*/
 				$(this).data('google', go);
 				$(this).data('options', options);
 				switch (ext){
@@ -299,7 +299,8 @@
 		switch (attr) {
 			// Скриншот страницы
 			case "photo":
-				download = title;
+				download = title.replace(/\s+/g, "-");
+				console.log(download);
 				break;
 			// Поделиться в фейсбук
 			case "facebook":
@@ -349,45 +350,46 @@
 			$("body").addClass('screen');
 			var laad_screen = false,
 				jq_xhr = $.ajax({
-				url: window.location.origin + '/screenshot/',
-				type: 'POST',
-				data: 'shot=' + link + '&title=' + download,
-				responseType: 'blob',
-				processData: false,
-				xhr:function(){
-					var xhr = new XMLHttpRequest();
-					xhr.responseType= 'blob'
-					return xhr;
-				},
-			}).done(
-				function(blob, status, xhr){
-					var disposition = JSON.parse(xhr.getResponseHeader('content-disposition').split("filename=")[1]);
-					var a = $("<a>click</a>");
-					a[0].href = URL.createObjectURL(blob);
-					a[0].download = disposition.fname;
-					$("body").append(a);
-					a[0].click();
-					$("body").removeClass('screen');
-					setTimeout(function(){
-						URL.revokeObjectURL(a[0].href);
-						a.remove();
-					}, 500);
-				}
-			).fail(
-				function(){
-					$("body").removeClass('screen');
-					setTimeout(function(){
-						alert("Не удалось обработать операцию");
-					}, 500);
-				}
-			).always(
-				function(data){
-					$("body").removeClass('screen');
-					//setTimeout(function(){
-					//  alert("Не удалось обработать операцию");
-					//}, 500);
-				}
-			);
+					url: window.location.origin + '/screenshot/',
+					type: 'POST',
+					data: 'shot=' + link + '&title=' + download,
+					responseType: 'blob',
+					processData: false,
+					xhr:function(){
+						var xhr = new XMLHttpRequest();
+						xhr.responseType= 'blob'
+						return xhr;
+					},
+				}).done(
+					function(blob, status, xhr){
+						var disposition = JSON.parse(xhr.getResponseHeader('content-disposition').split("filename=")[1]);
+						console.log(SON.parse(xhr.getResponseHeader('content-disposition'));
+						var a = $("<a>click</a>");
+						a[0].href = URL.createObjectURL(blob);
+						a[0].download = download + '.png';
+						$("body").append(a);
+						a[0].click();
+						$("body").removeClass('screen');
+						setTimeout(function(){
+							URL.revokeObjectURL(a[0].href);
+							a.remove();
+						}, 500);
+					}
+				).fail(
+					function(){
+						$("body").removeClass('screen');
+						setTimeout(function(){
+							alert("Не удалось обработать операцию");
+						}, 500);
+					}
+				).always(
+					function(data){
+						$("body").removeClass('screen');
+						//setTimeout(function(){
+						//  alert("Не удалось обработать операцию");
+						//}, 500);
+					}
+				);
 			return !1;
 		}
 	})
