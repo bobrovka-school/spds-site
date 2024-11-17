@@ -15,8 +15,8 @@ on:
         default: 'Залить файлы на хостинг'
 jobs:
   deploy:
-    - name: "Заливка"
     runs-on: ubuntu-latest
+    name: "Заливка"
     steps:
       - name: Проверка репозитория
         uses: actions/checkout@v4.1.1
