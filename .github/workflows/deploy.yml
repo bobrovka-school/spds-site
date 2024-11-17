@@ -16,7 +16,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: "Заливка"
+    name: СП ДС «Василёк» ГБОУ СОШ с. Бобровка
     steps:
       - name: Проверка репозитория
         uses: actions/checkout@v4.1.1
