@@ -349,7 +349,7 @@
 			case "viber":
 				//Длина сообщения 255 символов
 				description = description.slice(0, 255);
-				server = "viber://forward?text=" + encodeURIComponent(description.slice(0, 255) + "\n\n" + link)
+				server = "viber://forward?text=" + encodeURIComponent(link + "\n" + description);
 				break;
 		}
 		if(server){

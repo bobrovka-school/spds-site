@@ -19,7 +19,7 @@
 		<meta name="og:url" content="[(site_url)][~[*id*]~]">
 		<meta property="og:type" content="website">
 		<meta name="og:title" content="[*pagetitle:notags:strip*]">
-		<meta name="og:description" content="[*desc:notags:strip*]">
+		<meta name="og:description" content="[*desc:notags:strip*]">[[ogImage]]
 		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 		<link rel="shortcut icon" href="/favicon.ico">
@@ -42,7 +42,7 @@
 								<h1 class="entry-title">[*pagetitle*]</h1>
 							</header>
 							<div class="entry-content">[*content*]</div>[[DocLister?
-							  &parents=`2`
+							  &parents=`[*parent*]`
 							  &display=`[(news_count)]`
 							  &tvList=`imageSoc, news_date`
 							  &tvPrefix=``
