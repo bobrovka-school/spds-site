@@ -337,6 +337,15 @@ module.exports = function(grunt) {
 						],
 						dest: '<%= globalConfig.gosave %>/css/',
 						filter: 'isFile'
+					},
+					{
+						expand: true,
+						flatten : true,
+						src: [
+							'src/less/prism.css'
+						],
+						dest: '<%= globalConfig.gosave %>/css/',
+						filter: 'isFile'
 					}
 				]
 			},
@@ -350,7 +359,8 @@ module.exports = function(grunt) {
 				files: {
 					'<%= globalConfig.gosave %>/css/main.min.css' : ['test/css/replace/main.css'],
 					'<%= globalConfig.gosave %>/css/tinymce.min.css' : ['test/css/replace/tinymce.css'],
-					'<%= globalConfig.gosave %>/css/bvi.min.css' : ['<%= globalConfig.gosave %>/css/bvi.css']
+					'<%= globalConfig.gosave %>/css/bvi.min.css' : ['<%= globalConfig.gosave %>/css/bvi.css'],
+					'<%= globalConfig.gosave %>/css/prism.min.css' : ['<%= globalConfig.gosave %>/css/prism.css']
 				}
 			},
 		},
@@ -460,8 +470,8 @@ module.exports = function(grunt) {
 				options: {
 					doctype: 'html',
 					client: false,
-					pretty: '\t',
-					separator:  '\n',
+					pretty: "",//'\t',
+					separator:  "",//'\n',
 					//pretty: '\t',
 					//separator:  '\n',
 					data: function(dest, src) {
@@ -490,8 +500,8 @@ module.exports = function(grunt) {
 			tpl: {
 				options: {
 					client: false,
-					pretty: '\t',
-					separator:  '\n',
+					pretty: "",//'\t',
+					separator:  "",//'\n',
 					doctype: 'html',
 					data: function(dest, src) {
 						return {
