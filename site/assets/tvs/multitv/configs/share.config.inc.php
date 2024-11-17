@@ -8,7 +8,7 @@ $settings['fields'] = array(
 	'type' => array(
 		'caption' => 'Тип',
 		'type' => 'dropdown',
-		'elements' => '==||ВКонтакте==vk||Одноклассники==ok||Telegram==telegram||Твиттер==twitter||Фейсбук==facebook||Скриншот==photo'
+		'elements' => '==||ВКонтакте==vk||Одноклассники==ok||Telegram==telegram||Твиттер==twitter||Фейсбук==facebook||Viber==viber||Скриншот==photo'
 	)
 );
 $settings['templates'] = array(

@@ -2354,6 +2354,12 @@
 	/**
 	 * Ссылки поделиться
 	 */
+	.on("mouseover", ".share-icons-menu", function(e){
+		$(".share-icons .icons").addClass("open");
+	})
+	.on("mouseout", ".share-icons-menu", function(e){
+		$(".share-icons .icons").removeClass("open");
+	})
 	.on("click", ".share-icons a[down-link]", function(e){
 		e.preventDefault();
 		var attr = $(this).attr('down-link'),
@@ -2431,17 +2437,17 @@
 					responseType: 'blob',
 					processData: false,
 					xhr:function(){
-						var xhr = new XMLHttpRequest();
+						let xhr = new XMLHttpRequest();
 						xhr.responseType= 'blob'
 						return xhr;
 					},
 				}).done(
 					function(blob, status, xhr){
-						var disposition = JSON.parse(xhr.getResponseHeader('content-disposition').split("filename=")[1]);
-						console.log(disposition);
-						var a = $("<a>click</a>");
+						let disposition = JSON.parse(xhr.getResponseHeader('content-disposition').split("filename=")[1]);
+						let a = $("<a>click</a>");
+						let regex = /((?:ScreenShot-)|(?:-+)+)/gmi;
 						a[0].href = URL.createObjectURL(blob);
-						a[0].download = disposition.fname;
+						a[0].download = $.trim(disposition.fname.replace(regex, " "));
 						$("body").append(a);
 						a[0].click();
 						$("body").removeClass('screen');
@@ -2460,18 +2466,9 @@
 				).always(
 					function(data){
 						$("body").removeClass('screen');
-						//setTimeout(function(){
-						//  alert("Не удалось обработать операцию");
-						//}, 500);
 					}
 				);
 			return !1;
 		}
-	})
-	.on("mouseover", ".share-icons-menu", function(e){
-		$(".share-icons .icons").addClass("open");
-	})
-	.on("mouseout", ".share-icons-menu", function(e){
-		$(".share-icons .icons").removeClass("open");
 	});
 }(jQuery));
