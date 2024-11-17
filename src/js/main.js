@@ -299,8 +299,7 @@
 		switch (attr) {
 			// Скриншот страницы
 			case "photo":
-				download = title.replace(/\s+/g, "-");
-				console.log(download);
+				download = 'ScreenShot-' + title.replace(/\s+/g, "-");
 				break;
 			// Поделиться в фейсбук
 			case "facebook":
@@ -339,6 +338,13 @@
 				server += "url=" + encodeURIComponent(link);
 				server += "&text=" + encodeURIComponent(description);
 				break;
+			// Поделиться в Viber
+			// Если установлено приложение Viber
+			case "viber":
+				//Длина сообщения 255 символов
+				description = description.slice(0, 255);
+				server = "viber://forward?text=" + encodeURIComponent(description.slice(0, 255) + "\n\n" + link)
+				break;
 		}
 		if(server){
 			// Если ссылка есть
@@ -363,10 +369,10 @@
 				}).done(
 					function(blob, status, xhr){
 						var disposition = JSON.parse(xhr.getResponseHeader('content-disposition').split("filename=")[1]);
-						console.log(JSON.parse(xhr.getResponseHeader('content-disposition')));
+						console.log(disposition);
 						var a = $("<a>click</a>");
 						a[0].href = URL.createObjectURL(blob);
-						a[0].download = download + '.png';
+						a[0].download = disposition.fname;
 						$("body").append(a);
 						a[0].click();
 						$("body").removeClass('screen');
