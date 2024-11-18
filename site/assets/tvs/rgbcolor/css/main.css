@@ -4,6 +4,7 @@
 	background-color: #fff;
 	border-radius: 4px;
 	box-shadow: 0 0 2px #000;
+	top: 100%;
 }
 .cp-container .cp-pills.hidden,
 .cp-popover-container .hidden {
@@ -14,4 +15,9 @@
 }
 .rgbcolor .addon {
 	max-width: 215px;
+}
+.rgbcolor .addon {
+	background-image: url(data:image/gif;base64,R0lGODlhBgAGAIABAMPDw////yH5BAEKAAEALAAAAAAGAAYAAAIKhIMGGMrs0pGgAAA7);
+	background-repeat: repeat;
+	background-position: left top;
 }
