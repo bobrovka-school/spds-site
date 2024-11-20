@@ -24,7 +24,6 @@ module.exports = function(grunt) {
 		}
 		return hash;
 	};
-	
 	var gc = {
 		fontvers: `${PACK.version}`,
 		assets: "assets/templates/projectsoft",
@@ -117,10 +116,30 @@ module.exports = function(grunt) {
 			"copy",
 			"pug"
 		]
-	},
+	};
 	NpmImportPlugin = require("less-plugin-npm-import");
 	require('load-grunt-tasks')(grunt);
 	require('time-grunt')(grunt);
+	var optionsPug = {
+			doctype: 'html',
+			client: false,
+			pretty: "",//'\t',
+			separator:  "",//'\n',
+			//pretty: '\t',
+			//separator:  '\n',
+			data: function(dest, src) {
+				return {
+					"base": "[(site_url)]",
+					"tem_path" : "/assets/templates/projectsoft",
+					"img_path" : "assets/templates/projectsoft/images/",
+					"site_name": "[(site_name)]",
+					"hash": uniqid(),
+					"hash_css": uniqid(),
+					"hash_js": uniqid(),
+					"hash_appjs": uniqid(),
+				}
+			}
+		};
 	grunt.initConfig({
 		globalConfig : gc,
 		pkg : PACK,
@@ -191,6 +210,18 @@ module.exports = function(grunt) {
 							'test/js/main.js'
 						],
 						dest: '<%= globalConfig.gosave %>/js',
+						filter: 'isFile',
+						rename: function (dst, src) {
+							return dst + '/' + src.replace('.js', '.min.js');
+						}
+					},
+					{
+						expand: true,
+						flatten : true,
+						src: [
+							'site/assets/modules/renderogimage/js/editor.js'
+						],
+						dest: 'site/assets/modules/renderogimage/js',
 						filter: 'isFile',
 						rename: function (dst, src) {
 							return dst + '/' + src.replace('.js', '.min.js');
@@ -360,7 +391,8 @@ module.exports = function(grunt) {
 					'<%= globalConfig.gosave %>/css/main.min.css' : ['test/css/replace/main.css'],
 					'<%= globalConfig.gosave %>/css/tinymce.min.css' : ['test/css/replace/tinymce.css'],
 					'<%= globalConfig.gosave %>/css/bvi.min.css' : ['<%= globalConfig.gosave %>/css/bvi.css'],
-					'<%= globalConfig.gosave %>/css/prism.min.css' : ['<%= globalConfig.gosave %>/css/prism.css']
+					'<%= globalConfig.gosave %>/css/prism.min.css' : ['<%= globalConfig.gosave %>/css/prism.css'],
+					'site/assets/modules/renderogimage/css/main.min.css' : ['site/assets/modules/renderogimage/css/main.css']
 				}
 			},
 		},
@@ -467,26 +499,7 @@ module.exports = function(grunt) {
 		},
 		pug: {
 			serv: {
-				options: {
-					doctype: 'html',
-					client: false,
-					pretty: "",//'\t',
-					separator:  "",//'\n',
-					//pretty: '\t',
-					//separator:  '\n',
-					data: function(dest, src) {
-						return {
-							"base": "[(site_url)]",
-							"tem_path" : "/assets/templates/projectsoft",
-							"img_path" : "assets/templates/projectsoft/images/",
-							"site_name": "[(site_name)]",
-							"hash": uniqid(),
-							"hash_css": uniqid(),
-							"hash_js": uniqid(),
-							"hash_appjs": uniqid(),
-						}
-					}
-				},
+				options: optionsPug,
 				files: [
 					{
 						expand: true,
@@ -494,25 +507,11 @@ module.exports = function(grunt) {
 						src: [ '*.pug' ],
 						dest: __dirname + '/' + '<%= globalConfig.gosave %>/',
 						ext: '.html'
-					}
+					},
 				]
 			},
 			tpl: {
-				options: {
-					client: false,
-					pretty: "",//'\t',
-					separator:  "",//'\n',
-					doctype: 'html',
-					data: function(dest, src) {
-						return {
-							"base": "[(site_url)]",
-							"tem_path" : "/assets/templates/projectsoft",
-							"img_path" : "assets/templates/projectsoft/images/",
-							"site_name": "[(site_name)]",
-							"hash": uniqid(),
-						}
-					},
-				},
+				options: optionsPug,
 				files: [
 					{
 						expand: true,
@@ -522,57 +521,25 @@ module.exports = function(grunt) {
 						ext: '.html'
 					}
 				]
+			},
+			module: {
+				options: {
+					doctype: 'html',
+					client: false,
+					pretty: "\t",//'\t'
+					separator:  "\n",//'\n'
+				},
+				files: [
+					{
+						expand: true,
+						cwd: __dirname + '/site/assets/modules/renderogimage/',
+						src: [ '*.pug' ],
+						dest: __dirname + '/' + 'site/assets/modules/renderogimage/',
+						ext: '.tpl'
+					}
+				]
 			}
 		},
-		watch: {
-			options: {
-				livereload: true,
-			},
-			less: {
-				files: [
-					'src/less/**/*.*',
-				],
-				tasks: gc.less
-			},
-			js: {
-				files: [
-					'src/js/**/*.*',
-				],
-				tasks: gc.js
-			},
-			pug: {
-				files: [
-					'src/pug/**/*.*',
-				],
-				tasks: gc.pug
-			},
-			images: {
-				files: [
-					'src/images/**/*.*',
-				],
-				tasks: gc.images
-			},
-			fonts : {
-				files: [
-					'src/fonts/**/*.*',
-				],
-				tasks: gc.fonts
-			},
-			glyph : {
-				files: [
-					'src/glyph/**/*.*',
-				],
-				tasks: gc.glyph
-			}
-		}
 	});
 	grunt.registerTask('default',	gc.default);
-	grunt.registerTask('dev',		["watch"]);
-	grunt.registerTask('css',		gc.less);
-	grunt.registerTask('images',	gc.images);
-	grunt.registerTask('js',		gc.js);
-	grunt.registerTask('glyph',		gc.glyph);
-	grunt.registerTask('fonts',		gc.fonts);
-	grunt.registerTask('html',		gc.pug);
-	grunt.registerTask('speed',		gc.speed);
 };
