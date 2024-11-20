@@ -66,13 +66,13 @@
 				</div>
 				<div class="btn_container">
 					<div><span>Цвет</span>
-						<input class="input input_color input_select_textcolor" value="#ffffff" type="color">
+						<input class="input input_color input_select_textcolor" type="color" value="#ffffff">
 					</div>
 					<div><span>Тень</span>
 						<input class="input input_color input_select_textoutline" type="color" value="#000000">
 					</div>
 					<div><span>Обводка</span>
-						<input class="input_select_linewidth" type="range" value="4" min="0" max="20" step="1">
+						<input class="input_select_linewidth" type="range" min="0" max="50" step="1" value="4">
 					</div>
 				</div>
 			</div>
@@ -82,10 +82,10 @@
 					<button class="btn btn_green btn_loadimage">Загрузить фото</button>
 				</div>
 				<div><span>Фон:</span>
-					<input class="nput input_color input_select_bgcolor" type="color">
+					<input class="input input_color input_select_bgcolor" type="color">
 				</div>
 				<div><span>Затенить:</span>
-					<input class="input_overlay_alpha" type="range" value="0.2" min="0" max="1" step="0.01">
+					<input class="input_overlay_alpha" type="range" min="0" max="1" step="0.01" value="0.2">
 				</div>
 			</div>
 			<div class="btn_container">

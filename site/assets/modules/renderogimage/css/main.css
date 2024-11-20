@@ -280,6 +280,7 @@ body {
 					justify-content: left;
 	margin-right: 10px;
 	font-size: 13px;
+	min-width: 200px;
 }
 .app .btn_container > div span {
 	display: block;
