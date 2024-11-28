@@ -27,8 +27,10 @@ const application = function(params) {
 
 	function getCanvas() {
 		canvas = ge(params.canvas);
-		canvas.width = canvas.offsetWidth;
-		canvas.height = canvas.offsetHeight;
+		// 1144 = 16
+		// 643  = 9
+		canvas.width = 1144;
+		canvas.height = 643;
 		ctx = canvas.getContext('2d');
 	}
 
@@ -111,33 +113,29 @@ const application = function(params) {
 		bindings();
 		loadfonts();
 		let _text = [];
+		let _fltr = [];
+
 		_text.txt = ge('.post_text').value;
 		_text.x = 0;
 		_text.y = canvas.height / 2 - 15
 		_text.pressX = 0;
 		_text.pressY = 0;
-		_text.linewidth = linewidth;
-		_text.textcolor = '#fff';
-		_text.textoutline = '#000';
-		_text.fonsize = '26';
-		_text.fontfamily = fontfamily;
-		_text.fontweight = fontweight;
+
+		bgcolor = ge('.input_select_bgcolor').value = bgcolor || "#000000";
+		_text.fontfamily = ge('.input_select_font_family').value = fontfamily = params.fontfamily || 'Calibri';
+		_text.fontweight = ge('.input_select_fontweight').value = fontweight = params.fontweight || 'normal';
+		_text.linewidth = ge('.input_select_linewidth').value = linewidth = params.linewidth || '4';
+		_text.fonsize = ge('.input_fontsize').value = '48';
+		_text.textoutline = ge('.input_select_textoutline').value = '#000000';
+		_text.textcolor =  ge('.input_select_textcolor').value = "#FFFFFF";
+
+		
+		_fltr.alpha = ge('.input_overlay_alpha').value = '0.2';
+		_fltr.color = bgcolor;
+
 		elements.text = _text;
-		/*let img = new Image();
-		img.src = params.logo;
-		let _img = [];
-		_img.image = img;
-		_img.width = 113;
-		_img.height = 19;
-		_img.x = 20;
-		_img.y = 20;
-		_img.pressX = 0;
-		_img.pressY = 0;
-		elements.defaultImages.push(_img);*/
-		let _fltr = [];
-		_fltr.alpha = 0.2;
-		_fltr.color = "#000000";
 		elements.filterLayer = _fltr;
+
 		gameLoop();
 		loadActions();
 
@@ -145,7 +143,8 @@ const application = function(params) {
 	}
 
 	function drawImage(img) {
-		let ratioX = canvas.width / img.width;
+		// canvas.width
+		let ratioX = 1144 / img.width;
 		if (ratioX < 1) {
 			ctx.drawImage(img.image, img.x, img.y, img.width * ratioX, img.height * ratioX);
 		} else {
@@ -155,7 +154,7 @@ const application = function(params) {
 
 	function drawText(elem) {
 		let txt = elem.txt;
-		let lines = getLines(txt, canvas.width - 40);
+		let lines = getLines(txt, 1144 - 40);
 		let lineheight = 0;
 		let startposition = elem.y;
 		let eStartX = [];
@@ -167,10 +166,10 @@ const application = function(params) {
 			ctx.textAlign = "left";
 			ctx.fillStyle = elem.textcolor;
 			let txt_width = parseInt(ctx.measureText(line).width);
-			let _elementX = (canvas.width / 2) - (txt_width / 2);
+			let _elementX = (1144 / 2) - (txt_width / 2);
 			elementHeight = elementHeight + lineheight;
 			eStartX.push(parseInt(_elementX));
-			eMaxX.push((canvas.width / 2) + txt_width / 2);
+			eMaxX.push((1144 / 2) + txt_width / 2);
 			ctx.lineWidth = elem.linewidth;
 			ctx.miterLimit = 3;
 			ctx.lineJoin = 'circle';
@@ -199,7 +198,7 @@ const application = function(params) {
 
 	function drawElements() {
 		ctx.fillStyle = bgcolor;
-		ctx.fillRect(0, 0, canvas.width, canvas.height);
+		ctx.fillRect(0, 0, 1144, 643);
 		if (elements.images.length > 0) {
 			elements.images.forEach(element => {
 				drawImage(element);
@@ -207,7 +206,7 @@ const application = function(params) {
 		}
 		ctx.fillStyle = elements.filterLayer.color; //elements.filterLayer.color;
 		ctx.globalAlpha = elements.filterLayer.alpha;
-		ctx.fillRect(0, 0, canvas.width, canvas.height)
+		ctx.fillRect(0, 0, 1144, 643)
 
 		ctx.globalAlpha = 1;
 		if (elements.text) {
@@ -218,8 +217,6 @@ const application = function(params) {
 				drawImage(element);
 			});
 		}
-
-
 	}
 
 	function intersect(object) {
@@ -265,7 +262,7 @@ const application = function(params) {
 	}
 
 	function gameLoop() {
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		ctx.clearRect(0, 0, 1144, 643);
 		canvas.onmousemove = function(e) {
 			if (movedObject) {
 				movedObject.x = e.layerX - movedObject.pressX;
@@ -283,6 +280,7 @@ const application = function(params) {
 		let createEl = document.createElement('a');
 		createEl.href = canvasUrl;
 		createEl.download = "poster-" + file + ".jpg";
+		createEl.target = "_blank";
 		createEl.click();
 		createEl.remove();
 	});

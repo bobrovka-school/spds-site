@@ -287,7 +287,11 @@ module.exports = function(grunt) {
 					],
 					'<%= globalConfig.gosave %>/css/bvi.css': [
 						'src/less/bvi/scss/bvi.less'
-					]
+					],
+					'site/assets/modules/renderogimage/css/main.css' : [
+						'site/assets/modules/renderogimage/css/main.less'
+					],
+
 				}
 			},
 		},

@@ -4,7 +4,7 @@
 	<h1 class="text-center"><i class="fa fa-image"></i>Генератор Open Graph Image</h1>
 	<div class="app" id="app">
 		<div class="canvas_overlay">
-			<canvas class="cnvs" width="1144" height="509"></canvas>
+			<canvas class="cnvs" width="510" height="227"></canvas>
 		</div>
 		<div class="tools_overlay">
 			<div class="btn_container">
@@ -99,4 +99,4 @@
 	<p>&nbsp;</p>
 </div>
 <script src="<?= MODX_SITE_URL ?><?= $this->path ?>js/editor.min.js?<?= $this->getHash('js/editor.min.js') ?>"></script>
-<script>var params = {canvas: 'canvas.cnvs',width: 510,height: 228,bgcolor: '#444444',fontfamily: 'Calibri',fontweight: 'normal',linewidth: 4,fonts: [{name: 'Calibri',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/Calibri-Regular.ttf)',style: 'normal',weight: '400'},{name: 'Calibri',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/Calibri-Bold.ttf)',style: 'normal',weight: '700'},{name: 'PT Sans',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/PTSans-Regular.ttf)',style: 'normal',weight: '400'},{name: 'PT Sans',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/PTSans-Bold.ttf)',style: 'normal',weight: '700'},{name: 'Oswald',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/Oswald-Regular.ttf)',style: 'normal',weight: '400'},{name: 'Muller',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/MullerRegular.ttf)',style: 'normal',weight: '400'},{name: 'Muller',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/MullerBold.ttf)',style: 'normal',weight: '700'},{name: 'Ruslan Display',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/RuslanDisplayRegular.ttf)',style: 'normal',weight: '400'}]};var app = new application(params);app.start();</script>
+<script>var params = {canvas: 'canvas.cnvs',width: 1144,height: 509,bgcolor: '#444444',fontfamily: 'Calibri',fontweight: 'normal',linewidth: 4,fonts: [{name: 'Calibri',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/Calibri-Regular.ttf)',style: 'normal',weight: '400'},{name: 'Calibri',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/Calibri-Bold.ttf)',style: 'normal',weight: '700'},{name: 'PT Sans',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/PTSans-Regular.ttf)',style: 'normal',weight: '400'},{name: 'PT Sans',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/PTSans-Bold.ttf)',style: 'normal',weight: '700'},{name: 'Oswald',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/Oswald-Regular.ttf)',style: 'normal',weight: '400'},{name: 'Muller',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/MullerRegular.ttf)',style: 'normal',weight: '400'},{name: 'Muller',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/MullerBold.ttf)',style: 'normal',weight: '700'},{name: 'Ruslan Display',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/RuslanDisplayRegular.ttf)',style: 'normal',weight: '400'}]};var app = new application(params);app.start();</script>
