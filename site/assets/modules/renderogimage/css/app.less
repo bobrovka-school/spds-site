@@ -1,5 +1,6 @@
 .app {
 	max-width: var(--app-width);
+	min-width: var(--app-width);
 	width: 100%;
 	margin: 0 auto;
 	.razdel {
@@ -16,16 +17,10 @@
 		position: relative;
 		overflow: hidden;
 		background: #eee;
-		aspect-ratio: ~'16 / 9';
 		canvas {
 			display: block;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			width: 100%;
-			height: 100%;
+			width: var(--app-width);
+			height: var(--app-height);
 			// 1144 = 16
 			// 643  = 9
 		}
@@ -47,6 +42,7 @@
 		&_color {
 			width: 24px;
 			height: 24px;
+			border: 1px solid;
 		}
 	}
 	input[type=radio] {
@@ -56,6 +52,7 @@
 	}
 	select {
 		height: 22px;
+		border: 1px solid;
 	}
 	textarea.input {
 		width: 100%;
@@ -64,6 +61,12 @@
 		font-family: "PT Sans";
 		font-weight: bold;
 		padding: 8px 10px;
+		min-height: 90px;
+		border: 1px solid;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 0px;
 	}
 	h1,
 	h2,

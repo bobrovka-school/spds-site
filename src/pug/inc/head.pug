@@ -20,7 +20,13 @@ head
 	meta(property="og:type" content="website")
 	meta(name="og:title" content="[*pagetitle:notags:strip*]")
 	meta(name="og:description" content="[*desc:notags:strip*]")
-	|[[ogImage]]
+	meta(name="image" content!="[*imageSoc*]")
+	meta(name="vk:image" content!="[[phpthumb? &input=`[*imageSoc*]` $options=`w=1144,h=509,f=jpg,zc=C`]]")
+	meta(name="og:image" content!="[[phpthumb? &input=`[*imageSoc*]` $options=`w=1144,h=509,f=jpg,zc=C`]]")
+	meta(name="og:image:width" content="1144")
+	meta(name="og:image:height" content="509")
+	meta(name="og:image:type" content="image/jpeg")
+	meta(name="twitter:card" content="summary_large_image")
 	include ../inc/favicon.pug
 	|{{@FILE assets/templates/projectsoft/tpl/style.html}}
 	// RSS

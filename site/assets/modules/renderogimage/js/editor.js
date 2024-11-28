@@ -27,10 +27,8 @@ const application = function(params) {
 
 	function getCanvas() {
 		canvas = ge(params.canvas);
-		// 1144 = 16
-		// 643  = 9
-		canvas.width = 1144;
-		canvas.height = 643;
+		canvas.width = params.width || 1144;
+		canvas.height = params.height || 509;;
 		ctx = canvas.getContext('2d');
 	}
 
@@ -115,9 +113,9 @@ const application = function(params) {
 		let _text = [];
 		let _fltr = [];
 
-		_text.txt = ge('.post_text').value;
+		_text.txt = ge('.post_text').value = "Текст и лого\nможно двигать";
 		_text.x = 0;
-		_text.y = canvas.height / 2 - 15
+		_text.y = canvas.height / 2 - 75;
 		_text.pressX = 0;
 		_text.pressY = 0;
 

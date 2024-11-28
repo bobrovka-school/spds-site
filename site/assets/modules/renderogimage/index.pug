@@ -1,14 +1,16 @@
 link(rel="stylesheet" href!="<?= MODX_SITE_URL ?><?= $this->path ?>css/main.min.css?<?= $this->getHash('css/main.min.css') ?>")
+- var width = 1144;
+- var height = 509;
 .container
 	h1.text-center
 		i.fa.fa-image
 		|Генератор Open Graph Image
 	#app.app
 		.canvas_overlay
-			canvas.cnvs(width="510" height="227")
+			canvas.cnvs(width=width height=height)
 		.tools_overlay
 			.btn_container
-				textarea.input.post_text(placeholder="Текст поста" cols="30" rows="3") Текст и лого можно двигать
+				textarea.input.post_text(placeholder="Текст поста" cols="30" rows="3")
 			h2.text-center Шрифт
 			div
 				.btn_container
@@ -51,11 +53,17 @@ link(rel="stylesheet" href!="<?= MODX_SITE_URL ?><?= $this->path ?>css/main.min.
 			.btn_container
 				.flex-column-center
 					button.btn.btn_green.download Сохранить на компьютер
+			.btn_container
+				.flex-column-center
+					h2.text-center Как это выглядит
+					img(src="/assets/modules/renderogimage/image/vk.com.png" alt="Как это выглядит VK")
+					br
+					img(src="/assets/modules/renderogimage/image/tg.png" alt="Как это выглядит Telegram")
 			input.hidden.image_src_input(type="file" accept="image/png,image/jpeg")
 	p &nbsp;
 script(src!="<?= MODX_SITE_URL ?><?= $this->path ?>js/editor.min.js?<?= $this->getHash('js/editor.min.js') ?>")
 script
-	|var params = {canvas: 'canvas.cnvs',width: 1144,height: 509,bgcolor: '#444444',fontfamily: 'Calibri',fontweight: 'normal',linewidth: 4,fonts: [{name: 'Calibri',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/Calibri-Regular.ttf)',style: 'normal',weight: '400'},{name: 'Calibri',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/Calibri-Bold.ttf)',style: 'normal',weight: '700'},{name: 'PT Sans',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/PTSans-Regular.ttf)',style: 'normal',weight: '400'},{name: 'PT Sans',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/PTSans-Bold.ttf)',style: 'normal',weight: '700'},{name: 'Oswald',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/Oswald-Regular.ttf)',style: 'normal',weight: '400'},{name: 'Muller',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/MullerRegular.ttf)',style: 'normal',weight: '400'},{name: 'Muller',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/MullerBold.ttf)',style: 'normal',weight: '700'},{name: 'Ruslan Display',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/RuslanDisplayRegular.ttf)',style: 'normal',weight: '400'}]};var app = new application(params);app.start();
+	|var params = {canvas: 'canvas.cnvs',width: #{width},height: #{height},bgcolor: '#000000',fontfamily: 'Calibri',fontweight: 'normal',linewidth: 4,fonts: [{name: 'Calibri',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/Calibri-Regular.ttf)',style: 'normal',weight: '400'},{name: 'Calibri',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/Calibri-Bold.ttf)',style: 'normal',weight: '700'},{name: 'PT Sans',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/PTSans-Regular.ttf)',style: 'normal',weight: '400'},{name: 'PT Sans',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/PTSans-Bold.ttf)',style: 'normal',weight: '700'},{name: 'Oswald',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/Oswald-Regular.ttf)',style: 'normal',weight: '400'},{name: 'Muller',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/MullerRegular.ttf)',style: 'normal',weight: '400'},{name: 'Muller',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/MullerBold.ttf)',style: 'normal',weight: '700'},{name: 'Ruslan Display',url: 'url(<?= MODX_SITE_URL ?><?= $this->path ?>fonts/RuslanDisplayRegular.ttf)',style: 'normal',weight: '400'}]};var app = new application(params);app.start();
 //-	
 	="\n"
 	|var params = {
