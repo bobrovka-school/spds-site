@@ -65,7 +65,6 @@ site/assets/modules/clientsettings/*
 !site/assets/modules/clientsettings/config
 site/assets/modules/clientsettings/config/*
 !site/assets/modules/clientsettings/config/*.php
-!site/assets/modules/renderogimage
 
 # Plugins
 site/assets/plugins/*
