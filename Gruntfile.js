@@ -186,7 +186,6 @@ module.exports = function(grunt) {
 			},
 			prism: {
 				src: [
-					//'src/js/jquery.btn.js',
 					'src/js/prism.js'
 				],
 				dest: 'test/js/prism.js'
@@ -210,18 +209,6 @@ module.exports = function(grunt) {
 							'test/js/main.js'
 						],
 						dest: '<%= globalConfig.gosave %>/js',
-						filter: 'isFile',
-						rename: function (dst, src) {
-							return dst + '/' + src.replace('.js', '.min.js');
-						}
-					},
-					{
-						expand: true,
-						flatten : true,
-						src: [
-							'site/assets/modules/renderogimage/js/editor.js'
-						],
-						dest: 'site/assets/modules/renderogimage/js',
 						filter: 'isFile',
 						rename: function (dst, src) {
 							return dst + '/' + src.replace('.js', '.min.js');
@@ -288,10 +275,6 @@ module.exports = function(grunt) {
 					'<%= globalConfig.gosave %>/css/bvi.css': [
 						'src/less/bvi/scss/bvi.less'
 					],
-					'site/assets/modules/renderogimage/css/main.css' : [
-						'site/assets/modules/renderogimage/css/main.less'
-					],
-
 				}
 			},
 		},
@@ -396,7 +379,6 @@ module.exports = function(grunt) {
 					'<%= globalConfig.gosave %>/css/tinymce.min.css' : ['test/css/replace/tinymce.css'],
 					'<%= globalConfig.gosave %>/css/bvi.min.css' : ['<%= globalConfig.gosave %>/css/bvi.css'],
 					'<%= globalConfig.gosave %>/css/prism.min.css' : ['<%= globalConfig.gosave %>/css/prism.css'],
-					'site/assets/modules/renderogimage/css/main.min.css' : ['site/assets/modules/renderogimage/css/main.css']
 				}
 			},
 		},
@@ -526,23 +508,6 @@ module.exports = function(grunt) {
 					}
 				]
 			},
-			module: {
-				options: {
-					doctype: 'html',
-					client: false,
-					pretty: "\t",//'\t'
-					separator:  "\n",//'\n'
-				},
-				files: [
-					{
-						expand: true,
-						cwd: __dirname + '/site/assets/modules/renderogimage/',
-						src: [ '*.pug' ],
-						dest: __dirname + '/' + 'site/assets/modules/renderogimage/',
-						ext: '.tpl'
-					}
-				]
-			}
 		},
 	});
 	grunt.registerTask('default',	gc.default);
