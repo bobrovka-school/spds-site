@@ -4,7 +4,7 @@
 	"description": "Сайт СП ДС «Василёк» ГБОУ СОШ с. Бобровка",
 	"main": "Grunfile.js",
 	"scripts": {
-		"inst": "npm i --legacy-peer-deps",
+		"inst": "npm i",
 		"build": "grunt -v",
 		"watch": "grunt -v watch",
 		"preinstall": "npm i -g less less-plugin-sass2less pug-cli bower && bower install && npm run convert",

@@ -12,14 +12,16 @@
 	},
 	"build_systems": [
 		{
-			"name": "Build Site Project",
+			"name": "Запуск полной сборки проекта",
 			"working_dir": "${project_path}",
-			"shell_cmd": "npm run build"
+			"cmd": ["start", "/wait", "npm", "run", "build"],
+			"shell": true
 		},
 		{
 			"name": "Site Project Install",
 			"working_dir": "${project_path}",
-			"shell_cmd": "npm run inst"
+			"cmd": ["start", "/wait", "npm", "run", "inst"],
+			"shell": true
 		}
 	]
 }
